@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,53 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="gameHeader">Star Wars RPG!</div>
-
-    <div id="allCharacters"></div>
-
-    <div class="boxLabel">Your Character: </div>
-    <div id="yourCharacter"></div>
-
-    <div class="boxLabel">Enemies Available To Attack: </div>
-    <div id="allEnemies"></div>
-
-    <div class="boxLabel">Fight Section: </div>
-    <div id="currentFight"></div>
-
-    <br>
-    <button id="attackEnemy">Attack</button>
-
-    <br>
-    <button id="resetGame">Restart</button>
+    <div class="mainContent">
+        <h1>Star Wars RPG</h1>
+        <div class="characterBox">
+            <div class="luke charactersBox">
+                <p class="nameHp">Luke Skywalker</p>
+                <img class="characterImage" src="assets/images/luke.jpeg">
+                <p class="nameHp">100</p>
+            </div>
+            <div class="obiWan charactersBox">
+                <p class="nameHp">Obi-Wan Kenobi</p>
+                <img class="characterImage" src="assets/images/obi-wan.jpeg">
+                <p class="nameHp">100</p>
+            </div>
+            <div class="jarjar charactersBox">
+                <p class="nameHp">Jar Jar Binks</p>
+                <img class="characterImage" src="assets/images/jarjar.jpeg">
+                <p class="nameHp">100</p>
+            </div>
+            <div class="vadar charactersBox">
+                <p class="nameHp">Darth Vadar</p>
+                <img class="characterImage" src="assets/images/vadar.jpeg">
+                <p class="nameHp">100</p>
+            </div>
+        </div>
+        <div class="enemyBox">
+            <p class="enemyLabel">Enemies</p>
+            <div class="enemyDisplay"></div>
+        </div>
+        <div class="fightBoxL">
+            <div class="fightDisplayL"></div>
+        </div>
+        <div class="fightBoxR">
+            <div class="fightDisplayR"></div>
+        </div>
+        <button class="attack btn">Attack</button>
+        <br>
+        <button class="restart btn">Restart</button>
+    </div>
 
 
 
     <script src="assets/javascript/game.js"></script>
-    
+
 </body>
+
 </html>
