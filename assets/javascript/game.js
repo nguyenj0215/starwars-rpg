@@ -52,6 +52,7 @@ $(document).ready(function () {
 
     $(".enemyLabel").hide()
     $(".fightBoxLabel").hide()
+    $(".attack").hide()
 
     //user character selection ------------------------------------------------------------------
     function characterSelection() {
@@ -110,6 +111,7 @@ $(document).ready(function () {
                 charTwo = luke;
                 $(".luke").appendTo(".fightDisplayR")
                 $(".fightBoxLabel").show()
+                $(".attack").show()
             }
         })
         $(".obiWan").on("click", function () {
@@ -119,6 +121,7 @@ $(document).ready(function () {
                 charTwo = obiWan;
                 $(".obiWan").appendTo(".fightDisplayR")
                 $(".fightBoxLabel").show()
+                $(".attack").show()
             }
         })
         $(".jarjar").on("click", function () {
@@ -128,6 +131,7 @@ $(document).ready(function () {
                 charTwo = jarjar;
                 $(".jarjar").appendTo(".fightDisplayR")
                 $(".fightBoxLabel").show()
+                $(".attack").show()
             }
         })
         $(".vadar").on("click", function () {
@@ -137,6 +141,7 @@ $(document).ready(function () {
                 charTwo = vadar;
                 $(".vadar").appendTo(".fightDisplayR")
                 $(".fightBoxLabel").show()
+                $(".attack").show()
             }
 
         })
@@ -172,6 +177,7 @@ $(document).ready(function () {
         $(".characterTitle").show()
         $(".fightBoxLabel").hide()
         $(".enemyLabel").hide()
+        $(".attack").hide()
 
         charOneSelected = false;
         charTwoSelected = false;

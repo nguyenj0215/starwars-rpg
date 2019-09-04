@@ -49,6 +49,7 @@ h1 {
     /*border: 1px solid black;*/
 }
 .charactersBox {
+    margin-top: 20px;
     width: 130px;
     height: 138px;
     background-color: green;
@@ -69,7 +70,7 @@ h1 {
 }
 .fightBoxL {
     position: absolute;
-    top: 52%;
+    top: 48%;
     left: 38%;
     width: 50%;
     height: 139px;
@@ -77,7 +78,7 @@ h1 {
 }
 .fightBoxR {
     position: absolute;
-    top: 52%;
+    top: 48%;
     right: 0;
     left: 53%;
     height:139px;
