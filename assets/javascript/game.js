@@ -154,9 +154,6 @@ $(document).ready(function () {
                 else if (charTwo.healthPoints < 0) {
                     $(".fightTextDisplay").text(charTwo.name + " has defeated " + charOne.name + ". " + "You lose!")
                 }
-                else if (charTwo.healthPoints <= 0 && charOne.healthPoints <= 0) {
-                    $(".fightTextDisplay").text("Both " + charOne.name + " and " + charTwo.name + " have been defeated. It's a tie!")
-                }
             }
         })
     }
