@@ -130,12 +130,16 @@ $(document).ready(function () {
                 charOne.baseAttackPower = charOne.baseAttackPower + charOne.attackPower;
                 charOne.healthPoints = charOne.healthPoints - charTwo.counterAttackPower;
                 charTwo.healthPoints = charTwo.healthPoints - charOne.baseAttackPower;
-                $(".fightTextDisplay").text("You attack " + charOne.name)
+                $(".fightTextDisplay").text(charOne.name + " attacks " + charTwo.name + " for " + charOne.baseAttackPower + " , " + charTwo.name + " has " + charTwo.healthPoints + " HP remaining. "
+                + charTwo.name + " counter attacks " + charOne.name + " for " + charTwo.counterAttackPower + " , " + charOne.name + " has " + charOne.healthPoints + " HP remaining.")
                 if (charOne.healthPoints < 0) {
-                    alert("You win!")
+                    $(".fightTextDisplay").text(charOne.name + " has defeated " + charTwo.name + ". " + "You win!")
                 }
                 else if (charTwo.healthPoints < 0) {
-                    alert("You lose!")
+                    $(".fightTextDisplay").text(charTwo.name + " has defeated " + charOne.name + ". " + "You lose!")
+                }
+                else if (charTwo.healthPoints <= 0 && charOne.healthPoints <= 0) {
+                    $(".fightTextDisplay").text("Both " + charOne.name + " and " + charTwo.name + " have been defeated. It's a tie!")
                 }
             }
         })
@@ -153,8 +157,8 @@ $(document).ready(function () {
 
         charOneSelected = false;
         charTwoSelected = false;
-        charOne = "";
-        charTwo = "";
+        charOne = {};
+        charTwo = {};
 
         luke = {
             healthPoints: 100,
