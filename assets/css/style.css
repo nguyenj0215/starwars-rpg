@@ -1,9 +1,17 @@
 body, html {
     margin: 0;
     padding: 0;
-    /*background-image: url('../images/space.jpeg');*/
-    background-color: black;
+    background: url('../images/huh.jpeg') top right no-repeat; 
+    background-attachment:fixed;
+    background-size: 100% 100%;
     color: white;
+}
+.gameTitle {
+    position: absolute;
+    right: 20%;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
 }
 h1 {
     font-weight: bold;
@@ -43,6 +51,7 @@ h1 {
 .charactersBox {
     width: 130px;
     height: 138px;
+    background-color: green;
     border: 1px solid green;
     margin-right: 5px;
     float: left;
@@ -77,12 +86,13 @@ h1 {
 }
 .fightText {
     position: absolute;
-    top: 10%;
+    top: 35%;
     left: 35%;
     width: 33%;
     height: 25%;
     /*border: 1px solid white;*/
     color: white;
+    font-size: 20px;
 }
 .attack {
     height: 25px;
