@@ -1,7 +1,9 @@
 body, html {
     margin: 0;
     padding: 0;
-    background-image: url('../images/space.jpeg');
+    /*background-image: url('../images/space.jpeg');*/
+    background-color: black;
+    color: white;
 }
 h1 {
     font-weight: bold;
@@ -52,7 +54,6 @@ h1 {
 .enemyBox {
     position: absolute;
     top: 181px;
-    clear: both;
     width: 100%;
     height: 165px;
     /*border: 1px solid black;*/
@@ -60,7 +61,6 @@ h1 {
 .fightBoxL {
     position: absolute;
     top: 52%;
-    clear: both;
     left: 38%;
     width: 50%;
     height: 139px;
@@ -71,13 +71,20 @@ h1 {
     top: 52%;
     right: 0;
     left: 53%;
-    clear: both;
     height:139px;
     width: 50%;
     /*border: 1px solid black;*/
 }
+.fightText {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 33%;
+    height: 25%;
+    /*border: 1px solid white;*/
+    color: white;
+}
 .attack {
-    clear: both;
     height: 25px;
     width: 60px;
     font-weight: bold;
@@ -86,7 +93,6 @@ h1 {
     top: 535px;
 }
 .restart {
-    clear: both;
     height: 25px;
     width: 60px;
     font-weight: bold;

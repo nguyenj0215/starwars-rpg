@@ -11,38 +11,42 @@ var charOne;
 var charTwo;
 
 // chracters objects -----------------------------------------------------------
-    var luke = {
-        healthPoints: 100,
-        baseAttackPower: 0,
-        attackPower: 10,
-        counterAttackPower: 20,
-        selected: false,
-        defSelected: false
-    }
-    var obiWan = {
-        healthPoints: 110,
-        baseAttackPower: 0,
-        attackPower: 10,
-        counterAttackPower: 20,
-        selected: false,
-        defSelected: false
-    }
-    var jarjar = {
-        healthPoints: 120,
-        baseAttackPower: 0,
-        attackPower: 10,
-        counterAttackPower: 20,
-        selected: false,
-        defSelected: false
-    }
-    var vadar = {
-        healthPoints: 130,
-        baseAttackPower: 0,
-        attackPower: 10,
-        counterAttackPower: 20,
-        selected: false,
-        defSelected: false
-    }
+var luke = {
+    name : "Luke Skywalker",
+    healthPoints: 120,
+    baseAttackPower: 0,
+    attackPower: 8,
+    counterAttackPower: 2,
+    selected: false,
+    defSelected: false
+}
+var obiWan = {
+    name : "Obi-Wan Kenobi",
+    healthPoints: 100,
+    baseAttackPower: 0,
+    attackPower: 9,
+    counterAttackPower: 5,
+    selected: false,
+    defSelected: false
+}
+var jarjar = {
+    name : "Jar Jar Binks",
+    healthPoints: 150,
+    baseAttackPower: 0,
+    attackPower: 2,
+    counterAttackPower: 20,
+    selected: false,
+    defSelected: false
+}
+var vadar = {
+    name : "Darth Vadar",
+    healthPoints: 180,
+    baseAttackPower: 1,
+    attackPower: 1,
+    counterAttackPower: 25,
+    selected: false,
+    defSelected: false
+}
 
 $(document).ready(function () {
 
@@ -63,7 +67,7 @@ $(document).ready(function () {
                 obiWan.selected = true;
                 charOne = obiWan;
                 $(".obiWan").appendTo(".fightDisplayL").css({ "background-color": "green" });
-                $(".obiWan, .jarjar, .vadar").appendTo(".enemyDisplay").css({ "background-color": "red" })
+                $(".luke, .jarjar, .vadar").appendTo(".enemyDisplay").css({ "background-color": "red" })
             }
         })
         $(".jarjar").on("click", function () {
@@ -72,7 +76,7 @@ $(document).ready(function () {
                 jarjar.selected = true;
                 charOne = jarjar;
                 $(".jarjar").appendTo(".fightDisplayL").css({ "background-color": "green" });
-                $(".obiWan, .jarjar, .vadar").appendTo(".enemyDisplay").css({ "background-color": "red" })
+                $(".obiWan, .luke, .vadar").appendTo(".enemyDisplay").css({ "background-color": "red" })
             }
         })
         $(".vadar").on("click", function () {
@@ -81,12 +85,12 @@ $(document).ready(function () {
                 vadar.selected = true;
                 charOne = vadar;
                 $(".vadar").appendTo(".fightDisplayL").css({ "background-color": "green" });
-                $(".obiWan, .jarjar, .vadar").appendTo(".enemyDisplay").css({ "background-color": "red" })
+                $(".obiWan, .jarjar, .luke").appendTo(".enemyDisplay").css({ "background-color": "red" })
             }
         })
     }
 
-    //enemy character selection ------------------------------------------------------------------------------------
+    //enemy character selection and fight initiation---------------------------------------------------
     function enemySelection() {
         $(".luke").on("click", function () {
             if (charOneSelected === true && charTwoSelected === false && luke.selected != true) {
@@ -119,34 +123,70 @@ $(document).ready(function () {
                 charTwo = vadar;
                 $(".vadar").appendTo(".fightDisplayR")
             }
+
         })
-    }
-    characterSelection();
-    enemySelection();
-    attackEnemy();
-
-    console.log(charOne)
-    console.log(charTwo)
-
-    //attack function ---------------------------------------------------------------------------------------
-    function attackEnemy() {
         $(".attack").on("click", function () {
             if (charOneSelected === true && charTwoSelected === true) {
                 charOne.baseAttackPower = charOne.baseAttackPower + charOne.attackPower;
                 charOne.healthPoints = charOne.healthPoints - charTwo.counterAttackPower;
                 charTwo.healthPoints = charTwo.healthPoints - charOne.baseAttackPower;
-                if (charOne.healthPoints > 0 && charTwo.healthPoints < 0) {
+                $(".fightTextDisplay").text("You attack " + charOne.name)
+                if (charOne.healthPoints < 0) {
                     alert("You win!")
                 }
-                else if (charTwo.healthPoints > 0 && charOne.healthPoints < 0) {
+                else if (charTwo.healthPoints < 0) {
                     alert("You lose!")
                 }
-//make it that so as hp goes down it gets written to the characters box in addition to the console text message
             }
         })
     }
 
-    //restart function on click --------------------------------------------------------------------
-    // need to reset positioning, border colors, stats, booleans
+    //calling functions -----------------------------------------------------------------------------
+    characterSelection();
+    enemySelection();
 
+    //restart function on click --------------------------------------------------------------------
+
+    $(".restart").on("click", function () {
+
+        $(".luke, .obiWan, .jarjar, .vadar").appendTo(".characterBox").css({ "background-color": "green" })
+
+        charOneSelected = false;
+        charTwoSelected = false;
+        charOne = "";
+        charTwo = "";
+
+        luke = {
+            healthPoints: 100,
+            baseAttackPower: 0,
+            attackPower: 10,
+            counterAttackPower: 20,
+            selected: false,
+            defSelected: false
+        }
+        obiWan = {
+            healthPoints: 110,
+            baseAttackPower: 0,
+            attackPower: 10,
+            counterAttackPower: 20,
+            selected: false,
+            defSelected: false
+        }
+        jarjar = {
+            healthPoints: 120,
+            baseAttackPower: 0,
+            attackPower: 10,
+            counterAttackPower: 20,
+            selected: false,
+            defSelected: false
+        }
+        vadar = {
+            healthPoints: 130,
+            baseAttackPower: 0,
+            attackPower: 10,
+            counterAttackPower: 20,
+            selected: false,
+            defSelected: false
+        }
+    })
 })
