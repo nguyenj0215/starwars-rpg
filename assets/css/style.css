@@ -1,6 +1,26 @@
 body, html {
     margin: 0;
     padding: 0;
+    background-image: url('../images/space.jpeg');
+}
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+}
+.enemyLabel {
+    font-weight: bold;
+    font-size: 25px;
+    /*border-bottom: 1px solid black;*/
+}
+.fightBoxLabel {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    font-weight: bold;
+    font-size: 25px;
+    /*border-bottom: 1px solid black;*/
+    width: 100%;
+    margin: 0 auto;
 }
 .mainContent {
     margin-left: 15px;
@@ -12,18 +32,66 @@ body, html {
     width: 100px;
     height: 100px;
 }
+.characterBox {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    /*border: 1px solid black;*/
+}
 .charactersBox {
     width: 130px;
-    height: 130px;
-    padding: 5px;
-    border: 5px solid green;
+    height: 138px;
+    border: 1px solid green;
     margin-right: 5px;
     float: left;
 }
-.enemyBox {
-    clear: both;
-}
 .nameHp {
-   margin: 0 auto;
-   text-align: center;
+    margin: 0 auto;
+    text-align: center;
+ }
+.enemyBox {
+    position: absolute;
+    top: 181px;
+    clear: both;
+    width: 100%;
+    height: 165px;
+    /*border: 1px solid black;*/
 }
+.fightBoxL {
+    position: absolute;
+    top: 52%;
+    clear: both;
+    left: 38%;
+    width: 50%;
+    height: 139px;
+    /*border: 1px solid black;*/
+}
+.fightBoxR {
+    position: absolute;
+    top: 52%;
+    right: 0;
+    left: 53%;
+    clear: both;
+    height:139px;
+    width: 50%;
+    /*border: 1px solid black;*/
+}
+.attack {
+    clear: both;
+    height: 25px;
+    width: 60px;
+    font-weight: bold;
+    position: absolute;
+    left: 48%;
+    top: 535px;
+}
+.restart {
+    clear: both;
+    height: 25px;
+    width: 60px;
+    font-weight: bold;
+    position: absolute;
+    top: 585px;
+    left:48%;
+}
+
