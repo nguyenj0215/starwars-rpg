@@ -1,3 +1,5 @@
+// eventually for portfolio: scale images upon selection, sound upon clicking attack, background music, clearer background image
+
 //global variable declarations -------------------------------------------------
 var healthPoints;
 var baseAttackPower;
