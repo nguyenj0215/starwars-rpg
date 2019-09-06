@@ -11,6 +11,7 @@ var charOneSelected = false;
 var charTwoSelected = false;
 var charOne;
 var charTwo;
+var attack = true;
 
 // chracters objects -----------------------------------------------------------
 var luke = {
@@ -148,7 +149,8 @@ $(document).ready(function () {
 
         })
         $(".attack").on("click", function () {
-            if (charOneSelected === true && charTwoSelected === true) {
+           
+            if (charOneSelected === true && charTwoSelected === true && attack === true) {
                 charOne.baseAttackPower = charOne.baseAttackPower + charOne.attackPower;
                 charOne.healthPoints = charOne.healthPoints - charTwo.counterAttackPower;
                 charTwo.healthPoints = charTwo.healthPoints - charOne.baseAttackPower;
@@ -156,11 +158,14 @@ $(document).ready(function () {
                     + charTwo.name + " counter attacks " + charOne.name + " for " + charTwo.counterAttackPower + " , " + charOne.name + " has " + charOne.healthPoints + " HP remaining.")
                 $(".fightTextDisplay").show()
                 if (charOne.healthPoints < 0) {
+                    attack = false
                     $(".fightTextDisplay").text(charOne.name + " has defeated " + charTwo.name + ". " + "You win!")
                 }
                 else if (charTwo.healthPoints < 0) {
+                    attack = false
                     $(".fightTextDisplay").text(charTwo.name + " has defeated " + charOne.name + ". " + "You lose!")
                 }
+            
             }
         })
     }
@@ -183,6 +188,7 @@ $(document).ready(function () {
 
         charOneSelected = false;
         charTwoSelected = false;
+        attack = true;
         charOne = {};
         charTwo = {};
 
